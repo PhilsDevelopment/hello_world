@@ -1,0 +1,6 @@
+# Compiled output and dependency cache — never commit these
+/target
+
+# Cargo.lock is typically committed for binaries but omitted for libraries.
+# For this binary project, you may choose to commit it.
+# Cargo.lock

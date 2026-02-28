@@ -1,0 +1,14 @@
+[package]
+name = "hello_world_rust"
+version = "0.1.0"
+edition = "2021"
+authors = ["Your Name <you@example.com>"]
+description = "A complete Hello World project in Rust with unit tests"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+# No external dependencies for this simple project
+
+[dev-dependencies]
+# No additional test dependencies needed
