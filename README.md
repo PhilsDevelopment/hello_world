@@ -14,7 +14,7 @@ A complete, well-commented "Hello World" project in Rust demonstrating:
 ## Project Structure
 
 ```
-hello_world_rust/
+hello_world/
 ├── Cargo.toml      # Package manifest & dependencies
 ├── .gitignore      # Files excluded from Git
 ├── README.md       # This file
@@ -42,5 +42,5 @@ All 6 unit tests should pass.
 
 ```bash
 cargo build --release
-# Binary at: ./target/release/hello_world_rust
+# Binary at: ./target/release/hello_world
 ```
