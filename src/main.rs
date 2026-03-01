@@ -11,16 +11,15 @@ mod greeter;
 /// Rust programs always begin execution at `main()`.
 /// The `fn` keyword declares a function.
 fn main() {
-    // Create a greeter instance.
-    let mut greeter = greeter::Greeter::new("World");
-    // Call our greeting function from the greeter module and bind the result
-    // let message = greeter::build_greeting("World");
+  // Create a greeter instance.
+  let mut greeter = greeter::Greeter::new("World");
+  // Call our greeting function from the greeter module and bind the result
+  // let message = greeter::build_greeting("World");
 
-    if ! greeter.has_greeted()
-    {
-        // Call the greet funtion.
-        greeter.greet();
-    }
+  if !greeter.has_greeted() {
+    // Call the greet funtion.
+    greeter.greet();
+  }
 
-    // // Print the grecargo run greeter string empty: {}", message_empty);
+  // // Print the grecargo run greeter string empty: {}", message_empty);
 }

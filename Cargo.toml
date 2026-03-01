@@ -1,6 +1,6 @@
 [package]
 name = "hello_world"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 authors = ["Your Name <you@example.com>"]
 description = "A complete Hello World project in Rust with unit tests"
