@@ -1,0 +1,60 @@
+# Maximum width of a line; lines longer than this will be wrapped.
+max_width = 120
+
+# Whether to use hard tabs instead of spaces.
+hard_tabs = false
+
+# Number of spaces per tab (only relevant when hard_tabs = false).
+tab_spaces = 2
+
+# How aggressively rustfmt should reflow code. Valid options are:
+#   "Off"     – don't run small-code heuristics
+#   "Default" – the normal behavior
+#   "Max"     – apply heuristics as aggressively as possible
+use_small_heuristics = "Max"
+
+# Reorder `use` imports alphabetically and group them.
+reorder_imports = true
+
+# Edition of Rust the project is using. Ensures formatting rules match.
+edition = "2021"
+
+#-----------------------------------------------------------------------------------------------------------------------
+# Unstable features
+#-----------------------------------------------------------------------------------------------------------------------
+
+# Enable/disable unstable features
+# unstable_features = true
+
+# Brace style
+# brace_style = "AlwaysNextLine"
+# control_brace_style = "AlwaysNextLine"
+
+# Wrap long comments.
+# wrap_comments = true     
+
+# Width to wrap comments
+# comment_width = 120      
+
+# Format code blocks within doc comments.
+# format_code_in_doc_comments = true
+
+#-----------------------------------------------------------------------------------------------------------------------
+# Unstable features
+#-----------------------------------------------------------------------------------------------------------------------
+
+#-----------------------------------------------------------------------------------------------------------------------
+# Additional options (not currently set) – uncomment/adjust
+# as needed. See https://rust-lang.github.io/rustfmt/ for full
+# documentation.
+#
+# skip_children = false                  # don't format function bodies
+# skip_flatten = true                    # do not reformat nested structures
+# blank_lines_upper_bound = 1            # max blank lines in a row
+# newline_style = "Unix"                 # line ending style (Unix or Windows)
+# reorder_impl_items = true              # reorder items inside impls
+# use_field_init_shorthand = true        # use `..` in struct init
+# trailing_comma = "Always"              # how to handle trailing commas
+
+# These variables are just examples; the full list is large and can be explored in the rustfmt reference. 
+# Having this section at the end makes it easy to remember what else you might tune.

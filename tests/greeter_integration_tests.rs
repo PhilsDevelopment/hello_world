@@ -22,51 +22,51 @@ use hello_world::greeter;
 /// Verify the happy path: a normal name produces the correct greeting.
 #[test]
 fn test_build_greeting_basic() {
-    let greeter = greeter::Greeter::new("World");
-    let result= greeter.get_greeting();
-    assert_eq!(result, "Hello, World!");
+  let greeter = greeter::Greeter::new("World");
+  let result = greeter.get_greeting();
+  assert_eq!(result, "Hello, World!");
 }
 
 #[test]
 fn test_build_greeting_no_name() {
-    let greeter = greeter::Greeter::new("");
-    let result= greeter.get_greeting();
-    assert_eq!(result, "Hello!");
+  let greeter = greeter::Greeter::new("");
+  let result = greeter.get_greeting();
+  assert_eq!(result, "Hello!");
 }
 
 /// Verify that the greeting works with a multi-word name.
 #[test]
 fn test_build_greeting_full_name() {
-    let greeter = greeter::Greeter::new("John Smith");
-    let result= greeter.get_greeting();
-    assert_eq!(result, "Hello, John Smith!");
+  let greeter = greeter::Greeter::new("John Smith");
+  let result = greeter.get_greeting();
+  assert_eq!(result, "Hello, John Smith!");
 }
 
 /// Verify that Unicode names are handled correctly.
 #[test]
 fn test_build_greeting_unicode() {
-    let greeter = greeter::Greeter::new("世界");
-    let result= greeter.get_greeting();
-    assert_eq!(result, "Hello, 世界!");
+  let greeter = greeter::Greeter::new("世界");
+  let result = greeter.get_greeting();
+  assert_eq!(result, "Hello, 世界!");
 }
 
 /// Verify that a name with leading/trailing whitespace is preserved as-is.
 /// (Trimming is the caller's responsibility, not build_greeting's.)
 #[test]
 fn test_build_greeting_preserves_whitespace() {
-    let greeter = greeter::Greeter::new("  Alice  ");
-    let result= greeter.get_greeting();
-    assert_eq!(result, "Hello,   Alice  !");
+  let greeter = greeter::Greeter::new("  Alice  ");
+  let result = greeter.get_greeting();
+  assert_eq!(result, "Hello,   Alice  !");
 }
 
 /// Verify that the return type is a proper owned String, not a slice.
 /// This confirms the function allocates and returns new memory correctly.
 #[test]
 fn test_build_greeting_returns_owned_string() {
-    let greeter = greeter::Greeter::new("Rust");
-    let result= greeter.get_greeting();
-    // If this compiles and passes, the return type is confirmed as String.
-    assert!(!result.is_empty());
+  let greeter = greeter::Greeter::new("Rust");
+  let result = greeter.get_greeting();
+  // If this compiles and passes, the return type is confirmed as String.
+  assert!(!result.is_empty());
 }
 
 // ============================================================
@@ -116,36 +116,35 @@ fn test_build_greeting_returns_owned_string() {
 /// This test verifies the two functions compose correctly together.
 #[test]
 fn test_safe_greeting_workflow() {
-    let name = "Alice";
+  let name = "Alice";
 
-    let mut uut = greeter::Greeter::new(name);
-    let result= uut.has_greeted();
+  let mut uut = greeter::Greeter::new(name);
+  let result = uut.has_greeted();
 
-    // `assert!` panics if the expression is false.
-    assert!(!result);
+  // `assert!` panics if the expression is false.
+  assert!(!result);
 
-    // greet.
-    uut.greet();
+  // greet.
+  uut.greet();
 
-    let result = uut.has_greeted();
-    assert!(result);
-  
+  let result = uut.has_greeted();
+  assert!(result);
 }
 
 /// When given an empty name, the fallback greeting should be used.
 #[test]
 fn test_safe_greeting_workflow_empty_name() {
-    let name = "";
+  let name = "";
 
-        let mut uut = greeter::Greeter::new(name);
-    let result= uut.has_greeted();
+  let mut uut = greeter::Greeter::new(name);
+  let result = uut.has_greeted();
 
-    // `assert!` panics if the expression is false.
-    assert!(!result);
+  // `assert!` panics if the expression is false.
+  assert!(!result);
 
-    // greet.
-    uut.greet();
+  // greet.
+  uut.greet();
 
-    let result = uut.has_greeted();
-    assert!(result);
+  let result = uut.has_greeted();
+  assert!(result);
 }
